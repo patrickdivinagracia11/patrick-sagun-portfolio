@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Patrick Sagun Portfolio</title>
+  <meta name="description" content="Portfolio of Patrick Sagun — real estate & property video editing, vertical & horizontal reels, house tours, photography." />
+  <style>
+    :root{--accent:#8b2121;--white:#fff;--glass:rgba(0,0,0,0.55);font-family:'Montserrat',Arial,Helvetica,sans-serif;}
+    html,body{height:100%;margin:0;background:#000;color:var(--white);scroll-behavior:smooth}
+    .bg-hero{position:fixed;inset:0;z-index:-2;background:#000 center/cover no-repeat;filter:brightness(.28) saturate(.95) contrast(.95);background-image:url('assets/Video_Editing_Timeline.jpg');background-size:cover;background-position:center;}
+    header{display:flex;align-items:center;gap:16px;padding:18px 28px}
+    .logo-wrap{display:flex;align-items:center;gap:12px}
+    .logo-wrap img{height:56px;display:block}
+    .site-title{font-weight:800;letter-spacing:.6px}
+    nav{margin-left:auto;display:flex;gap:10px}
+    nav a{color:var(--white);text-decoration:none;padding:8px 12px;border-radius:28px;background:var(--glass);font-weight:700}
+    .container{max-width:1200px;margin:0 auto;padding:24px}
+    .hero{min-height:54vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:32px}
+    h1{font-size:44px;margin:0 0 8px;letter-spacing:1px;text-transform:uppercase}
+    .sub{opacity:.9}
+    .cta{display:inline-block;background:var(--accent);padding:12px 22px;border-radius:24px;margin-top:18px;font-weight:800}
+    .selections{display:flex;flex-direction:column;gap:20px;align-items:center;margin:30px 0}
+    .sel{width:min(92%,920px);background:rgba(139,33,33,.85);padding:20px;border-radius:40px;display:flex;align-items:center;justify-content:center}
+    .sel a{color:white;text-decoration:none;font-weight:900;font-size:30px;letter-spacing:1px;text-transform:uppercase}
+    .section-title{display:flex;align-items:center;justify-content:center;margin:28px 0}
+    .pill{background:var(--accent);padding:10px 20px;border-radius:26px;font-weight:800}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+    .video-thumb{background:rgba(0,0,0,.45);border-radius:8px;overflow:hidden;cursor:pointer;position:relative}
+    .video-thumb img{width:100%;height:220px;object-fit:cover;display:block}
+    .video-title{position:absolute;left:12px;bottom:10px;background:rgba(0,0,0,.6);padding:6px 10px;border-radius:6px;font-weight:700}
+    .photo-cards{display:flex;gap:28px;flex-wrap:wrap;justify-content:center}
+    .photo-card{background:rgba(0,0,0,.45);padding:12px;border-radius:8px;min-width:260px;text-align:center}
+    .photo-card a{display:inline-block;margin-top:10px;padding:8px 12px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-weight:800}
+    footer{padding:48px 18px;text-align:center}
+    .contact-grid{display:flex;gap:40px;align-items:center;justify-content:center;flex-wrap:wrap}
+    .contact-card{min-width:240px;background:rgba(0,0,0,.45);padding:18px;border-radius:12px}
+    .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:999;align-items:center;justify-content:center}
+    .modal.active{display:flex}
+    .modal-content{position:relative;width:90vw;max-width:1200px}
+    .modal iframe{width:100%;height:56vw;max-height:720px;border:none;border-radius:8px}
+    .close-btn{position:absolute;top:-32px;right:0;font-size:44px;cursor:pointer;color:#fff}
+    @media(max-width:1024px){.grid{grid-template-columns:repeat(2,1fr)}.video-thumb img{height:200px}}
+    @media(max-width:640px){.grid{grid-template-columns:1fr}.logo-wrap img{height:44px}.site-title{display:none}}
+  </style>
+</head>
+<body>
+  <div class="bg-hero" aria-hidden></div>
+
+  <header class="container">
+    <div class="logo-wrap">
+      <img src="assets/logo.png" alt="Patrick Sagun logo" />
+      <div class="site-title">Patrick Sagun Portfolio</div>
+    </div>
+
+    <nav>
+      <a href="#international">International</a>
+      <a href="#vertical">Vertical</a>
+      <a href="#house">House Tour</a>
+      <a href="#horizontal">Horizontal</a>
+      <a href="#photo">Photo</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div>
+        <h1>Real Estate Video Editor</h1>
+        <p class="sub">Vertical reels • Horizontal promos • House tours • Photography</p>
+        <div><a class="cta" href="#contact">Let's work together</a></div>
+
+        <div class="selections" aria-hidden>
+          <div class="sel"><a href="#vertical">Vertical Video</a></div>
+          <div class="sel"><a href="#horizontal">Horizontal Video</a></div>
+          <div class="sel"><a href="#photo">Photo</a></div>
+          <div class="sel"><a href="#house">House Tour</a></div>
+          <div class="sel"><a href="#international">International House Tour</a></div>
+          <div class="sel"><a href="#contact">Contact Me</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="international" class="container">
+      <div class="section-title"><div class="pill">International House Tour</div></div>
+      <div class="grid" id="international-grid">
+        <div class="video-thumb" data-video="https://www.youtube.com/embed/bf-ZnpQKgM0">
+          <img src="https://img.youtube.com/vi/bf-ZnpQKgM0/maxresdefault.jpg" alt="International 1">
+          <div class="video-title">International 01</div>
+        </div>
+      </div>
+      <p style="opacity:.8;margin-top:10px">(this section is expandable — you can add the 17 videos you mentioned by copying the thumbnail div)</p>
+    </section>
+
+    <section id="vertical" class="container">
+      <div class="section-title"><div class="pill">Vertical Video</div></div>
+      <div class="grid" id="vertical-grid">
+        <div class="video-thumb" data-video="https://www.youtube.com/embed/WkGPhQRodEM">
+          <img src="https://img.youtube.com/vi/WkGPhQRodEM/maxresdefault.jpg" alt="Vertical 1">
+          <div class="video-title">Vertical 01</div>
+        </div>
+        <div class="video-thumb" data-video="https://www.youtube.com/embed/WkGPhQRodEM">
+          <img src="https://img.youtube.com/vi/WkGPhQRodEM/maxresdefault.jpg" alt="Vertical 2">
+          <div class="video-title">Vertical 02</div>
+        </div>
+      </div>
+      <p style="opacity:.8;margin-top:10px">Tip: To add videos later — duplicate one .video-thumb block and change <code>data-video</code> (use the YouTube embed URL) and the thumbnail file in <code>assets/</code>.</p>
+    </section>
+
+    <section id="house" class="container">
+      <div class="section-title"><div class="pill">House Tour</div></div>
+      <p style="text-align:center;font-weight:700;margin-bottom:8px">Also, I'm the one who shot the videos used in this video</p>
+      <div class="grid" id="house-grid">
+        <div class="video-thumb" data-video="https://www.youtube.com/embed/bWHJ5RVsqYI">
+          <img src="https://img.youtube.com/vi/bWHJ5RVsqYI/maxresdefault.jpg" alt="House 1">
+          <div class="video-title">House Tour 01</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="horizontal" class="container">
+      <div class="section-title"><div class="pill">Horizontal Video — EVENT EDIT</div></div>
+      <div class="grid" id="horizontal-grid">
+        <div class="video-thumb" data-video="https://www.youtube.com/embed/d58laHwefdk">
+          <img src="https://img.youtube.com/vi/d58laHwefdk/maxresdefault.jpg" alt="Horizontal 1">
+          <div class="video-title">Event Edit 01</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="photo" class="container">
+      <div class="section-title"><div class="pill">Photo</div></div>
+      <div class="photo-cards">
+        <div class="photo-card">
+          <h3>MODEL PHOTO</h3>
+          <p style="opacity:.9">Click the button to open the folder with more pictures.</p>
+          <a href="https://drive.google.com/drive/folders/1qpssHwoqpZygrtWof8EMpDY1sVs6vYB8?usp=sharing" target="_blank" rel="noopener">Click here to see more pictures</a>
+        </div>
+
+        <div class="photo-card">
+          <h3>BIRTHDAY PARTY</h3>
+          <p style="opacity:.9">Opens Google Drive folder.</p>
+          <a href="https://drive.google.com/drive/folders/1ZZRdb71wQEUFkb6vkSUeIge8YLWlnmam?usp=sharing" target="_blank" rel="noopener">Click here to see more pictures</a>
+        </div>
+
+        <div class="photo-card">
+          <h3>BASKETBALL PICTURE</h3>
+          <p style="opacity:.9">Opens Google Drive folder.</p>
+          <a href="https://drive.google.com/drive/folders/1jI1b1JPys2AGTfcn9PuGwK1cQmQOZdhM?usp=sharing" target="_blank" rel="noopener">Click here to see more pictures</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="padding:48px 18px" class="container">
+      <div class="section-title"><div class="pill">Contact Me</div></div>
+      <div class="contact-grid">
+        <div class="contact-card"><h3>Phone</h3><div style="font-weight:800;font-size:20px">+639565285584</div></div>
+        <div class="contact-card"><h3>Email</h3><div style="font-weight:800;font-size:20px">sagunpatrick22@gmail.com</div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div style="opacity:.85">© <strong>Patrick Sagun</strong> — Real Estate Video Editor</div>
+    <div style="margin-top:8px;opacity:.7">Share link suggestion: <code>/patricksagunportfolio</code></div>
+  </footer>
+
+  <div class="modal" id="videoModal" aria-hidden>
+    <div class="modal-content">
+      <div class="close-btn" id="closeBtn">&times;</div>
+      <iframe id="videoFrame" src="" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+    </div>
+  </div>
+
+  <script>
+    const thumbs = document.querySelectorAll('.video-thumb');
+    const modal = document.getElementById('videoModal');
+    const iframe = document.getElementById('videoFrame');
+    const closeBtn = document.getElementById('closeBtn');
+
+    thumbs.forEach(t => t.addEventListener('click', () => {
+      const src = t.dataset.video;
+      iframe.src = src + '?autoplay=1&rel=0';
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+    }));
+
+    function closeModal(){ modal.classList.remove('active'); iframe.src = ''; modal.setAttribute('aria-hidden','true'); }
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if(e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+  </script>
+</body>
+</html>

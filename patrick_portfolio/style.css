@@ -1,0 +1,21 @@
+
+body { margin:0; background:#000; font-family:Arial; color:white; }
+
+.hero {
+  height: 80vh;
+  background: url('assets/background.jpg') center/cover no-repeat fixed;
+  position: relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.overlay {
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.5);
+}
+
+.hero h1 { position:relative; font-size:3rem; }
+
+section { padding:40px; }

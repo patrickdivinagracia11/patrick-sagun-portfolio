@@ -87,6 +87,25 @@
       .modal-content { width: 96vw; }
       .modal iframe { height: 56vh; }
       .close-btn { top: -28px; font-size: 36px; }
+
+      /* ==== CENTERED LOGO HEADER ==== */
+.header-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0;
+}
+
+.center-logo {
+  height: 120px;
+}
+
+@media(max-width: 768px) {
+  .center-logo {
+    height: 90px;
+  }
+}
+
     }
   </style>
 </head>
@@ -94,9 +113,8 @@
 <body>
   <div class="bg-hero" aria-hidden></div>
 
-  <header class="container">
-    <div class="logo-wrap">
-      <img src="assets/Logo2.png" alt="Patrick Sagun logo" />
+  <header class="container header-center">
+  <img src="assets/Logo2.png" alt="Patrick Sagun logo" class="center-logo" />
       <!-- <div class="site-title">Patrick Sagun Portfolio</div> -->
     </div>
 

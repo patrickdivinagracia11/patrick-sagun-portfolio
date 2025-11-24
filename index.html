@@ -9,45 +9,13 @@
     :root{--accent:#8b2121;--white:#fff;--glass:rgba(0,0,0,0.55);font-family:'Montserrat',Arial,Helvetica,sans-serif;}
     html,body{height:100%;margin:0;background:transparent;color:var(--white);scroll-behavior:smooth}
     .bg-hero{position:fixed;inset:0;z-index:-2;background:#000 center/cover no-repeat;filter:brightness(.28) saturate(.95) contrast(.95);background-image:url('assets/Video_Editing_Timeline.jpg');background-size:cover;background-position:center;}
-
-    /* ==============================
-       MEDIUM THIN HEADER (NEW)
-    =============================== */
-    header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:12px 28px;   /* Medium thin */
-      background:rgba(0,0,0,0.65);
-      backdrop-filter:blur(6px);
-      position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      z-index:999;
-    }
-
-    .logo-wrap{display:flex;align-items:center;gap:12px;}
-    .logo-wrap img{
-      height:46px !important; /* Medium thin size */
-      display:block;
-    }
-
-    nav{display:flex;gap:10px;margin-left:auto}
-    nav a{
-      color:var(--white);
-      text-decoration:none;
-      padding:6px 14px;
-      border-radius:20px;
-      background:rgba(255,255,255,0.12);
-      font-weight:600;
-      font-size:14px;
-      white-space:nowrap;
-    }
-
-    /* Container for sections below header */
-    .container{max-width:1200px;margin:0 auto;padding:24px;margin-top:95px;}
-
+    header{display:flex;align-items:center;gap:16px;padding:18px 28px}
+    .logo-wrap{display:flex;align-items:center;gap:12px}
+    .logo-wrap img{height:100px;display:block}
+    .site-title{font-weight:800;letter-spacing:.6px}
+    nav{margin-left:auto;display:flex;gap:10px}
+    nav a{color:var(--white);text-decoration:none;padding:8px 12px;border-radius:28px;background:var(--glass);font-weight:700}
+    .container{max-width:1200px;margin:0 auto;padding:24px}
     .hero{min-height:54vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:32px}
     h1{font-size:44px;margin:0 0 8px;letter-spacing:1px;text-transform:uppercase}
     .sub{opacity:.9}
@@ -73,24 +41,63 @@
     .modal iframe{width:100%;height:56vw;max-height:720px;border:none;border-radius:8px}
     .close-btn{position:absolute;top:-32px;right:0;font-size:44px;cursor:pointer;color:#fff}
 
-    /* Responsive fixes */
-    @media(max-width:1024px){.grid{grid-template-columns:repeat(2,1fr)}.video-thumb img{height:200px}}
-    @media(max-width:640px){
-      .grid{grid-template-columns:1fr}.logo-wrap img{height:40px}
+    @media(max-width:1024px){
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .video-thumb img{height:200px}
     }
 
+    @media(max-width:640px){
+      .grid{grid-template-columns:1fr}
+      .logo-wrap img{height:44px}
+      .site-title{display:none}
+    }
+
+    /* ==== MOBILE FIXES (FINAL) ==== */
+    @media (max-width: 768px) {
+      header { padding: 14px 18px; }
+      nav { gap: 6px; overflow-x: auto; padding-bottom: 6px; }
+      nav a { font-size: 13px; padding: 7px 12px; white-space: nowrap; }
+
+      .logo-wrap img { height: 100px; }
+
+      .hero { padding: 60px 18px; text-align: center; }
+      h1 { font-size: 30px; line-height: 38px; }
+      .sub { font-size: 15px; }
+      .cta { padding: 10px 18px; font-size: 15px; }
+
+      .selections { margin-top: 24px; gap: 16px; }
+      .sel { padding: 16px; border-radius: 30px; }
+      .sel a { font-size: 22px; }
+
+      .section-title { margin: 24px 0; }
+      .pill { padding: 8px 18px; font-size: 15px; }
+
+      .grid { grid-template-columns: 1fr !important; gap: 18px; }
+      .video-thumb img { height: 200px; }
+      .video-title { font-size: 14px; padding: 5px 8px; }
+
+      .photo-cards { gap: 18px; }
+      .photo-card { min-width: 100%; padding: 16px; }
+
+      .contact-grid { flex-direction: column; gap: 20px; }
+      .contact-card { width: 100%; }
+
+      footer { padding: 32px 12px; font-size: 14px; }
+
+      .modal-content { width: 96vw; }
+      .modal iframe { height: 56vh; }
+      .close-btn { top: -28px; font-size: 36px; }
+    }
   </style>
 </head>
-<body>
 
+<body>
   <div class="bg-hero" aria-hidden></div>
 
-  <!-- =============================
-       NEW MEDIUM-THIN HEADER
-  ============================== -->
-  <header>
+  <header class="container">
     <div class="logo-wrap">
       <img src="assets/Logo2.png" alt="Patrick Sagun logo" />
+      <!-- <div class="site-title">Patrick Sagun Portfolio</div> -->
     </div>
 
     <nav>
@@ -103,9 +110,6 @@
     </nav>
   </header>
 
-  <!-- =====================================
-       MAIN CONTENT
-  ====================================== -->
   <main>
     <section class="hero container">
       <div>
@@ -124,71 +128,65 @@
       </div>
     </section>
 
-   <section id="Cinematic" class="container">
-  <div class="section-title"><div class="pill">Cinematic House Tour</div></div>
-  <div class="grid" id="international-grid">
+    <section id="Cinematic" class="container">
+      <div class="section-title"><div class="pill">Cinematic House Tour</div></div>
+      <div class="grid" id="international-grid">
+        <div class="video-thumb" data-video="https://www.youtube.com/embed/bf-ZnpQKgM0">
+          <img src="https://img.youtube.com/vi/bf-ZnpQKgM0/maxresdefault.jpg" alt="International 1">
+          <div class="video-title">Int. House Tour 01</div>
+        </div>
 
-    <div class="video-thumb" data-video="https://www.youtube.com/embed/bf-ZnpQKgM0">
-      <img src="https://img.youtube.com/vi/bf-ZnpQKgM0/maxresdefault.jpg" alt="International 1">
-      <div class="video-title">Int. House Tour 01</div>
-    </div>
+        <div class="video-thumb" data-video="https://www.youtube.com/embed/cl5FMKqy_mQ">
+          <img src="https://img.youtube.com/vi/cl5FMKqy_mQ/maxresdefault.jpg" alt="International 2">
+          <div class="video-title">Int. House Tour 02</div>
+        </div>
 
-    <div class="video-thumb" data-video="https://www.youtube.com/embed/cl5FMKqy_mQ">
-      <img src="https://img.youtube.com/vi/cl5FMKqy_mQ/maxresdefault.jpg" alt="International 2">
-      <div class="video-title">Int. House Tour 02</div>
-    </div>
+        <div class="video-thumb" data-video="https://www.youtube.com/embed/EguIYZnvp10">
+          <img src="https://img.youtube.com/vi/EguIYZnvp10/maxresdefault.jpg" alt="International 3">
+          <div class="video-title">Int. House Tour 03</div>
+        </div>
 
-    <div class="video-thumb" data-video="https://www.youtube.com/embed/EguIYZnvp10">
-      <img src="https://img.youtube.com/vi/EguIYZnvp10/maxresdefault.jpg" alt="International 3">
-      <div class="video-title">Int. House Tour 03</div>
-    </div>
+        <div class="video-thumb" data-video="https://www.youtube.com/embed/Rxr4xqxUzJU">
+          <img src="https://img.youtube.com/vi/Rxr4xqxUzJU/maxresdefault.jpg" alt="International 4">
+          <div class="video-title">Int. House Tour 04</div>
+        </div>
 
-    <div class="video-thumb" data-video="https://www.youtube.com/embed/Rxr4xqxUzJU">
-      <img src="https://img.youtube.com/vi/Rxr4xqxUzJU/maxresdefault.jpg" alt="International 4">
-      <div class="video-title">Int. House Tour 04</div>
-    </div>
+        <div class="video-thumb" data-video="https://www.youtube.com/embed/ufK9I-Laqio">
+          <img src="https://img.youtube.com/vi/ufK9I-Laqio/maxresdefault.jpg" alt="International 5">
+          <div class="video-title">Int. House Tour 05</div>
+        </div>
 
-    <div class="video-thumb" data-video="https://www.youtube.com/embed/ufK9I-Laqio">
-      <img src="https://img.youtube.com/vi/ufK9I-Laqio/maxresdefault.jpg" alt="International 5">
-      <div class="video-title">Int. House Tour 05</div>
-    </div>
+        <div class="video-thumb" data-video="https://www.youtube.com/embed/N2i0ER79MAE">
+          <img src="https://img.youtube.com/vi/N2i0ER79MAE/maxresdefault.jpg" alt="International 6">
+          <div class="video-title">Int. House Tour 06</div>
+        </div>
+      </div>
+    </section>
 
-    <div class="video-thumb" data-video="https://www.youtube.com/embed/N2i0ER79MAE">
-      <img src="https://img.youtube.com/vi/N2i0ER79MAE/maxresdefault.jpg" alt="International 6">
-      <div class="video-title">Int. House Tour 06</div>
-    </div>
+    <section id="vertical" class="container">
+      <div class="section-title"><div class="pill">Vertical Video</div></div>
+      <div class="grid" id="vertical-grid">
+        <div class="video-thumb" data-video="https://www.youtube.com/embed/WkGPhQRodEM">
+          <img src="https://img.youtube.com/vi/WkGPhQRodEM/maxresdefault.jpg" alt="Vertical 1">
+          <div class="video-title">Vertical 01</div>
+        </div>
 
-  </div>
-</section>
+        <div class="video-thumb" data-video="https://youtube.com/embed/z9Uk0mtrmuA">
+          <img src="https://img.youtube.com/vi/z9Uk0mtrmuA/maxresdefault.jpg" alt="Vertical 2">
+          <div class="video-title">Vertical 02</div>
+        </div>
 
-<section id="vertical" class="container">
-  <div class="section-title"><div class="pill">Vertical Video</div></div>
-  <div class="grid" id="vertical-grid">
+        <div class="video-thumb" data-video="https://youtube.com/embed/DqLy-Vp3mQo">
+          <img src="https://img.youtube.com/vi/DqLy-Vp3mQo/maxresdefault.jpg" alt="Vertical 3">
+          <div class="video-title">Vertical 03</div>
+        </div>
 
-    <div class="video-thumb" data-video="https://www.youtube.com/embed/WkGPhQRodEM">
-      <img src="https://img.youtube.com/vi/WkGPhQRodEM/maxresdefault.jpg" alt="Vertical 1">
-      <div class="video-title">Vertical 01</div>
-    </div>
-
-    <div class="video-thumb" data-video="https://youtube.com/embed/z9Uk0mtrmuA">
-      <img src="https://img.youtube.com/vi/z9Uk0mtrmuA/maxresdefault.jpg" alt="Vertical 2">
-      <div class="video-title">Vertical 02</div>
-    </div>
-
-    <div class="video-thumb" data-video="https://youtube.com/embed/DqLy-Vp3mQo">
-      <img src="https://img.youtube.com/vi/DqLy-Vp3mQo/maxresdefault.jpg" alt="Vertical 3">
-      <div class="video-title">Vertical 03</div>
-    </div>
-
-    <div class="video-thumb" data-video="https://youtube.com/embed/mI3i1O9y3NY">
-      <img src="https://img.youtube.com/vi/mI3i1O9y3NY/maxresdefault.jpg" alt="Vertical 4">
-      <div class="video-title">Vertical 04</div>
-    </div>
-
-  </div>
-</section>
-
-  
+        <div class="video-thumb" data-video="https://youtube.com/embed/mI3i1O9y3NY">
+          <img src="https://img.youtube.com/vi/mI3i1O9y3NY/maxresdefault.jpg" alt="Vertical 4">
+          <div class="video-title">Vertical 04</div>
+        </div>
+      </div>
+    </section>
 
     <section id="house" class="container">
       <div class="section-title"><div class="pill">House Tour</div></div>
@@ -213,32 +211,47 @@
 
     <section id="photo" class="container">
       <div class="section-title"><div class="pill">Photo</div></div>
+
       <div class="photo-cards">
         <div class="photo-card">
           <h3>MODEL PHOTO</h3>
           <p style="opacity:.9">Click the button to open the folder with more pictures.</p>
-          <a href="https://drive.google.com/drive/folders/1qpssHwoqpZygrtWof8EMpDY1sVs6vYB8?usp=sharing" target="_blank" rel="noopener">Click here to see more pictures</a>
+          <a href="https://drive.google.com/drive/folders/1qpssHwoqpZygrtWof8EMpDY1sVs6vYB8?usp=sharing" target="_blank" rel="noopener">
+            Click here to see more pictures
+          </a>
         </div>
 
         <div class="photo-card">
           <h3>BIRTHDAY PARTY</h3>
           <p style="opacity:.9">Opens Google Drive folder.</p>
-          <a href="https://drive.google.com/drive/folders/1ZZRdb71wQEUFkb6vkSUeIge8YLWlnmam?usp=sharing" target="_blank" rel="noopener">Click here to see more pictures</a>
+          <a href="https://drive.google.com/drive/folders/1ZZRdb71wQEUFkb6vkSUeIge8YLWlnmam?usp=sharing" target="_blank" rel="noopener">
+            Click here to see more pictures
+          </a>
         </div>
 
         <div class="photo-card">
           <h3>BASKETBALL PICTURE</h3>
           <p style="opacity:.9">Opens Google Drive folder.</p>
-          <a href="https://drive.google.com/drive/folders/1jI1b1JPys2AGTfcn9PuGwK1cQmQOZdhM?usp=sharing" target="_blank" rel="noopener">Click here to see more pictures</a>
+          <a href="https://drive.google.com/drive/folders/1jI1b1JPys2AGTfcn9PuGwK1cQmQOZdhM?usp=sharing" target="_blank" rel="noopener">
+            Click here to see more pictures
+          </a>
         </div>
       </div>
     </section>
 
     <section id="contact" style="padding:48px 18px" class="container">
       <div class="section-title"><div class="pill">Contact Me</div></div>
+
       <div class="contact-grid">
-        <div class="contact-card"><h3>Phone</h3><div style="font-weight:800;font-size:20px">+639565285584</div></div>
-        <div class="contact-card"><h3>Email</h3><div style="font-weight:800;font-size:20px">sagunpatrick22@gmail.com</div></div>
+        <div class="contact-card">
+          <h3>Phone</h3>
+          <div style="font-weight:800;font-size:20px">+639565285584</div>
+        </div>
+
+        <div class="contact-card">
+          <h3>Email</h3>
+          <div style="font-weight:800;font-size:20px">sagunpatrick22@gmail.com</div>
+        </div>
       </div>
     </section>
   </main>
@@ -268,10 +281,21 @@
       modal.setAttribute('aria-hidden', 'false');
     }));
 
-    function closeModal(){ modal.classList.remove('active'); iframe.src = ''; modal.setAttribute('aria-hidden','true'); }
+    function closeModal(){
+      modal.classList.remove('active');
+      iframe.src = '';
+      modal.setAttribute('aria-hidden','true');
+    }
+
     closeBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', e => { if(e.target === modal) closeModal(); });
-    document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+
+    modal.addEventListener('click', e => {
+      if(e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', e => {
+      if(e.key === 'Escape') closeModal();
+    });
   </script>
 </body>
 </html>
